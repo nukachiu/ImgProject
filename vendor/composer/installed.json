@@ -1,0 +1,65 @@
+[
+    {
+        "name": "sybio/image-workshop",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Sybio/ImageWorkshop.git",
+            "reference": "aa95fea257370f9ba316763ac278c2cd8d5be38a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Sybio/ImageWorkshop/zipball/aa95fea257370f9ba316763ac278c2cd8d5be38a",
+            "reference": "aa95fea257370f9ba316763ac278c2cd8d5be38a",
+            "shasum": ""
+        },
+        "require": {
+            "ext-gd": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.0",
+            "phpunit/phpunit": "~4.5"
+        },
+        "suggest": {
+            "ext-exif": "Allows to read and keep images EXIF data"
+        },
+        "time": "2018-04-17T19:19:29+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPImageWorkshop": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Clément Guillemain",
+                "homepage": "http://clementguillemain.fr",
+                "role": "Developer / Freelancer"
+            },
+            {
+                "name": "ImageWorkshop Community",
+                "homepage": "https://github.com/Sybio/ImageWorkshop/graphs/contributors"
+            }
+        ],
+        "description": "Powerful PHP class using GD library to work easily with images including layer notion (like Photoshop or GIMP)",
+        "homepage": "http://phpimageworkshop.com",
+        "keywords": [
+            "class",
+            "crop",
+            "gd",
+            "image",
+            "library",
+            "resize",
+            "rotate",
+            "thumbnail",
+            "watermark"
+        ]
+    }
+]
