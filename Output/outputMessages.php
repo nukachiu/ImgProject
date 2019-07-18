@@ -9,3 +9,8 @@ function showHelp()
 {
     printf("S-a apelat functia de help%s", PHP_EOL);
 }
+
+function showError($errorArray)
+{
+    printf('%s%s',$errorArray,PHP_EOL);
+}

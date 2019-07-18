@@ -1,18 +1,12 @@
 <?php
 
 function readImg(array $payLoad1){
-    $imagePath = $payLoad1['input-file'];
-
-    /**
-     * @var \Imagick $img
-     */
+    $imagePath = $payLoad1[INPUT_FILE];
+    
     $img = new Imagick($imagePath);
-
-    /**
-     * @var \Imagick $payLoad2['image']
-     */
+    
     array_shift($payLoad1);
-    $payLoad2 = $payLoad1 + ['image' => $img];
+    $payLoad2 = $payLoad1 + [IMAGE => $img];
 
     return $payLoad2;
 }

@@ -1,40 +1,66 @@
 <?php
 
-function stringToIntegerRatio($ratio)
+/**
+ * @param $ratio
+ * @return array
+ */
+function stringToIntegerRatio(string $ratio) : array
 {
-    $width = 0;
-    $height = 0;
-
     sscanf($ratio,"%d:%d", $ratioX, $ratioY);
 
     return [$ratioX,  $ratioY];
 }
 
-function canExecuteRatio($payLoad2)
+/**
+ * @param $payLoad2
+ * @return bool
+ */
+function canExecuteRatio(array $payLoad2) : bool
 {
-    if(!isset($payLoad2['format']))
+    if(!isset($payLoad2[FORMAT]))
         return false;
     return true;
 }
 
-function executeRatio($payLoad2)
+/**
+ *If both of width and height are set or none of them then initial width has priority
+ * @param array $payLoad2
+ * @return array
+ */
+function executeRatio(array $payLoad2) : array
 {
     if(!canExecuteRatio($payLoad2)){
         return $payLoad2;
     }
 
-    list($ratioX, $ratioY) = stringToIntegerRatio($payLoad2['format']);
+    list($ratioX, $ratioY) = stringToIntegerRatio($payLoad2[FORMAT]);
 
-    $oldWidth = $payLoad2['image']->getImageWidth();
+    if(isset($payLoad2[HEIGHT]) && !isset($payLoad2[WIDTH])){
+        $height = $payLoad2[HEIGHT];
+        $width = ($ratioX * $height) / $ratioY;
+
+        $payLoad2[IMAGE]->scaleImage($width,$height);
+
+        unset($payLoad2[FORMAT]);
+        return $payLoad2;
+    }
+
+    if(isset($payLoad2[WIDTH]) && !isset($payLoad2[HEIGHT])){
+        $width = $payLoad2[WIDTH];
+        $height = ($ratioY * $width) / $ratioX;
+
+        $payLoad2[IMAGE]->scaleImage($width,$height);
+
+        unset($payLoad2[FORMAT]);
+        return $payLoad2;
+    }
+
+    $oldWidth = $payLoad2[IMAGE]->getImageWidth();
 
     $newHeight = ($ratioY * $oldWidth) / $ratioX;
 
-    //printf("%f = (%d * %d) / %d", $newHeight, $ratioY, $oldWidth, $ratioX);
+    $payLoad2[IMAGE]->scaleImage($oldWidth,$newHeight);
 
-    //var_dump($oldWidth, $newHeight);
-
-    $payLoad2['image']->scaleImage($oldWidth,$newHeight);
-
-    unset($payLoad2['format']);
+    unset($payLoad2[FORMAT]);
     return $payLoad2;
 }
