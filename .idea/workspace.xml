@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c1977d-c1fe-461a-8c43-883fdc56978e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Error/error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Input/CLI.php" beforeDir="false" afterPath="$PROJECT_DIR$/Input/CLI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IsHelp/isHelp.php" beforeDir="false" afterPath="$PROJECT_DIR$/IsHelp/isHelp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadImg/LoadImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/LoadImg/LoadImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operations/executeOperations.php" beforeDir="false" afterPath="$PROJECT_DIR$/Operations/executeOperations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operations/height.php" beforeDir="false" afterPath="$PROJECT_DIR$/Operations/height.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operations/heightAndWidth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operations/ratio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Operations/ratio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operations/width.php" beforeDir="false" afterPath="$PROJECT_DIR$/Operations/width.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/outputMessages.php" beforeDir="false" afterPath="$PROJECT_DIR$/Output/outputMessages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveImg/saveImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/saveImg/saveImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addWatermark/addWatermark.php" beforeDir="false" afterPath="$PROJECT_DIR$/addWatermark/addWatermark.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +33,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="16" column="174" selection-start-line="16" selection-start-column="174" selection-end-line="16" selection-end-column="174" />
+            <state relative-caret-position="495">
+              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addWatermark/addWatermark.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -65,16 +62,17 @@
       <find>'image'</find>
       <find>'input-file'</find>
       <find>&quot;help&quot;</find>
+      <find>'watermark'</find>
     </findStrings>
     <replaceStrings>
       <replace>HEIGHT</replace>
       <replace>WIDTH</replace>
       <replace>FORMAT</replace>
-      <replace>WATERMARK</replace>
       <replace>OUTPUT_FILE</replace>
-      <replace>IMAGE</replace>
       <replace>INPUT_FILE</replace>
       <replace>HELP</replace>
+      <replace>IMAGE</replace>
+      <replace>WATERMARK</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -84,7 +82,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Operations/heightAndWidth.php" />
-        <option value="$PROJECT_DIR$/addWatermark/addWatermark.php" />
         <option value="$PROJECT_DIR$/Error/error.php" />
         <option value="$PROJECT_DIR$/Output/outputMessages.php" />
         <option value="$PROJECT_DIR$/Operations/constants.php" />
@@ -99,6 +96,7 @@
         <option value="$PROJECT_DIR$/Input/CLI.php" />
         <option value="$PROJECT_DIR$/IsHelp/isHelp.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/addWatermark/addWatermark.php" />
       </list>
     </option>
   </component>
@@ -130,7 +128,7 @@
             <path>
               <item name="ImgProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="ImgProject" type="462c0819:PsiDirectoryNode" />
-              <item name="Validation" type="462c0819:PsiDirectoryNode" />
+              <item name="addWatermark" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -181,18 +179,19 @@
       <updated>1563259663808</updated>
       <workItem from="1563259664904" duration="16012000" />
       <workItem from="1563346887572" duration="20709000" />
-      <workItem from="1563433440428" duration="19829000" />
+      <workItem from="1563433440428" duration="20233000" />
+      <workItem from="1563520109717" duration="679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56550000" />
+    <option name="totallyTimeSpent" value="57633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110127285" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11123409" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -232,13 +231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addWatermark/addWatermark.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_7.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -274,13 +266,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Operations/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="7" selection-start-line="1" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Operations/constants.php" />
     <entry file="file://$PROJECT_DIR$/Operations/ratio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -302,13 +288,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Operations/heightAndWidth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Operations/heightAndWidth.php" />
     <entry file="file://$PROJECT_DIR$/Output/outputMessages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -367,8 +347,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="16" column="174" selection-start-line="16" selection-start-column="174" selection-end-line="16" selection-end-column="174" />
+        <state relative-caret-position="495">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addWatermark/addWatermark.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
         </state>
       </provider>
     </entry>
