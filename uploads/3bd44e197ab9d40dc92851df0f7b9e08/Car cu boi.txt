@@ -1,0 +1,1 @@
+{"imageTitle":"Car cu boi","artistEmail":"nicugrigo@yahoo.com","artistName":"Niculae Grigorescu","cameraSpecs":"Pictura pe panza","price":"10000","captureDate":"2019-07-18","submit":"Salveaza profil"}

@@ -1,10 +1,11 @@
 <?php
 
-/**
- * @param $comandLine
+/**Returns an array associative with command options
+ * @param string $comandLine
  * @return array
  */
-function CLI($comandLine){
+function CLI(string $comandLine) : array
+{
     $payLoad = array();
 
     $payAux = explode(" ", $comandLine);

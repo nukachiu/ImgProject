@@ -1,11 +1,18 @@
 <?php
+session_start();
+include 'constants.php';
+
+function hashArtistName(string $artistName) : string {
+    return md5($artistName);
+}
+
 if(isset($_POST['submit'])){
-    $artistName = $_POST['artistName'];
-    $imageTitle = $_POST['imageTitle'];
-    $artistEmail = $_POST['artistEmail'];
-    $cameraSpecs = $_POST['cameraSpecs'];
-    $price = $_POST['price'];
-    $captureDate = $_POST['captureDate'];
+    $artistName = $_POST[ARTIST_NAME];
+    $imageTitle = $_POST[IMAGE_TITLE];
+    $artistEmail = $_POST[ARTIST_EMAIL];
+    $cameraSpecs = $_POST[CAMERA_SPECS];
+    $price = $_POST[PRICE];
+    $captureDate = $_POST[CAPTURE_DATE];
 
     $imageType = $_FILES['image1']['type'];
 
@@ -20,42 +27,56 @@ if(isset($_POST['submit'])){
             ];
 
     if(preg_match($namePattern, $artistName) === 0)
-        $errors['artistName'] = 'Incorrect name';
+        $errors[ARTIST_NAME] = 'Incorrect name';
     if(!$artistName)
-        $errors['artistName'] = 'Please write your name';
+        $errors[ARTIST_NAME] = 'Please write your name';
 
     if(preg_match($imageTitlePattern, $imageTitle) === 0)
-        $errors['imageTitle'] = 'Wrong image title';
+        $errors[IMAGE_TITLE] = 'Wrong image title';
     if(!$imageTitle)
-        $errors['imageTitle'] = 'Please write image title';
+        $errors[IMAGE_TITLE] = 'Please write image title';
 
     if(preg_match($emailPattern, $artistEmail) === 0)
-        $errors['artistEmail'] = 'Wrong format for email';
+        $errors[ARTIST_EMAIL] = 'Wrong format for email';
     if(!$artistEmail)
-        $errors['artistEmail'] = 'Please write your email';
+        $errors[ARTIST_EMAIL] = 'Please write your email';
 
     if(preg_match($pricePattern, $price) === 0)
-        $errors['price'] = 'Incorrect price';
+        $errors[PRICE] = 'Incorrect price';
     if(!$price)
-        $errors['price'] = 'Please write a price';
+        $errors[PRICE] = 'Please write a price';
 
     if(!$cameraSpecs)
-        $errors['cameraSpecs'] = 'Please write camera specifications';
+        $errors[CAMERA_SPECS] = 'Please write camera specifications';
 
 
 
     list($typeOfFile, $imageExtensions) = explode('/',$imageType);
-    if(strcmp($typeOfFile,'image'))
-        $errors['image'] = 'Please insert an image';
+    if(strcmp($typeOfFile,IMAGE))
+        $errors[IMAGE] = 'Please insert an image';
     if(in_array($imageExtensions, $extensions) === false)
-        $errors['image'] = 'Allowed extensions: jpeg, jpg, png';
+        $errors[IMAGE] = 'Allowed extensions: jpeg, jpg, png';
+    if(!$_FILES['image1'])
+        $errors[IMAGE] = 'Please select a photo';
 
-    $artistFolder = strtr($artistName,[' ' => '']);
+    $artistFolder = hashArtistName(strtr($artistName,[' ' => '']));
+    $path = sprintf("%s/%s",'uploads',$artistFolder);
 
     if(count($_FILES) && !isset($errors)){
-        if(!file_exists('/uploads/'.$artistName))
-            mkdir('uploads/'.$artistFolder);
-        move_uploaded_file($_FILES['image1']['tmp_name'],'uploads/'.$artistFolder.'/'.$_FILES['image1']['name']);
+        if(!file_exists('/uploads/'.$artistName)) {
+            mkdir('uploads/' . $artistFolder);
+        }
+        if(move_uploaded_file($_FILES['image1']['tmp_name'],$path.'/'.$_FILES['image1']['name']) === false){
+            $errors[IMAGE] = 'There was a problem while uploading the photo';
+        }
+        $informationJSON = json_encode($_POST);
+        if(file_put_contents($path.'/'.$imageTitle.'.txt',$informationJSON) === false)
+            die;
+
+        $imageName = $_FILES['image1']['name'];
+        $_SESSION[PATH_TO_JSON] = $path.'/'.$imageTitle.'.txt';
+        $_SESSION[PATH_TO_IMAGE] = sprintf('%s/%s', $path,$imageName);
+        header('Location: successPage.php');
     }
 
     var_dump($_FILES);
@@ -91,15 +112,15 @@ if(isset($_POST['submit'])){
             <form action="" method="post" enctype="multipart/form-data">
                 <label for="image_title">Image Title</label><br />
                 <input id="image_title" type="text" value="Car cu boi" name="imageTitle" / required>
-                <?php if (isset($_POST) && $errors['imageTitle']) {?>
-                    <div style="color: red"><?php echo $errors['imageTitle'] ?></div>
+                <?php if (isset($_POST) && $errors[IMAGE_TITLE]) {?>
+                    <div style="color: red"><?php echo $errors[IMAGE_TITLE] ?></div>
                 <?php } ?>
 
                 <br />
                 <label for="artist_email">Artist Email</label><br />
                 <input id="artist_email" type="email" value="nicugrigo@yahoo.com" name="artistEmail" required>
-                <?php if (isset($_POST) && $errors['artistEmail']) {?>
-                    <div style="color: red"><?php echo $errors['artistEmail'] ?></div>
+                <?php if (isset($_POST) && $errors[ARTIST_EMAIL]) {?>
+                    <div style="color: red"><?php echo $errors[ARTIST_EMAIL] ?></div>
                 <?php } ?>
 
                 <br />
@@ -112,15 +133,15 @@ if(isset($_POST['submit'])){
                 <br />
                 <label for="camera_specs">Camera Specs</label><br />
                 <input id="camera_specs" type="text" value="Pictura pe panza" name="cameraSpecs" / required>
-                <?php if (isset($_POST) && $errors['cameraSpecs']) {?>
-                    <div style="color: red"><?php echo $errors['cameraSpecs'] ?></div>
+                <?php if (isset($_POST) && $errors[CAMERA_SPECS]) {?>
+                    <div style="color: red"><?php echo $errors[CAMERA_SPECS] ?></div>
                 <?php } ?>
 
                 <br />
                 <label for="price">Price</label><br />
                 <input id="price" type="text" value="10000" name="price" / required>
-                <?php if (isset($_POST) && $errors['price']) {?>
-                    <div style="color: red"><?php echo $errors['price'] ?></div>
+                <?php if (isset($_POST) && $errors[PRICE]) {?>
+                    <div style="color: red"><?php echo $errors[PRICE] ?></div>
                 <?php } ?>
 
                 <br />
@@ -136,8 +157,8 @@ if(isset($_POST['submit'])){
                 <br/>
 
                 Image 1 <br />
-                <?php if (isset($_POST) && $errors['image']) {?>
-                    <div style="color: red"><?php echo $errors['image'] ?></div>
+                <?php if (isset($_POST) && $errors[IMAGE]) {?>
+                    <div style="color: red"><?php echo $errors[IMAGE] ?></div>
                 <?php } ?>
                 <input type="file" name="image1" />
                 <br />

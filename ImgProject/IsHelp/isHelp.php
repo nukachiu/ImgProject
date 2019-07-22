@@ -1,8 +1,10 @@
 <?php
 
-function isHelp($payLoad1)
+/**Checks if help option is set
+ * @param array $payLoad
+ * @return bool
+ */
+function isHelp(array $payLoad) : bool
 {
-    if(isset($payLoad1[HELP]))
-        return true;
-    return false;
+    return isset($payLoad[HELP]);
 }

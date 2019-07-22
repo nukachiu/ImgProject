@@ -1,8 +1,10 @@
 <?php
 
-function arrayToString($errorArray)
+/**
+ * @param array $errorArray
+ * @return string
+ */
+function arrayToString(array $errorArray) : string
 {
-    $payload10 = implode(PHP_EOL,$errorArray);
-
-    return $payload10;
+    return implode(PHP_EOL,$errorArray);
 }
