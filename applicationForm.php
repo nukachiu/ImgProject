@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'constants.php';
 
 function hashArtistName(string $artistName) : string {
     return md5($artistName);
@@ -13,7 +12,7 @@ if(isset($_POST['submit'])){
     $cameraSpecs = $_POST[CAMERA_SPECS];
     $price = $_POST[PRICE];
     $captureDate = $_POST[CAPTURE_DATE];
-
+    $tag = $_POST['tag'];
     $imageType = $_FILES['image1']['type'];
 
     $namePattern = '/([a-zA-Z]+) ([a-zA-Z]+)$/';
@@ -49,6 +48,9 @@ if(isset($_POST['submit'])){
     if(!$cameraSpecs)
         $errors[CAMERA_SPECS] = 'Please write camera specifications';
 
+    if(!$tag)
+        $errors[TAG] = 'Please choose a tag';
+
 
 
     list($typeOfFile, $imageExtensions) = explode('/',$imageType);
@@ -76,36 +78,13 @@ if(isset($_POST['submit'])){
         $imageName = $_FILES['image1']['name'];
         $_SESSION[PATH_TO_JSON] = $path.'/'.$imageTitle.'.txt';
         $_SESSION[PATH_TO_IMAGE] = sprintf('%s/%s', $path,$imageName);
-        header('Location: successPage.php');
+        header('Location: index.php?page=successPage');
     }
-
-    var_dump($_FILES);
 }
 ?>
 
-<html>
-<head>
-    <title>Admin homepage</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-</head>
-<body>
 <div id="wrapper">
-    <div id="header">
-        Header
-    </div>
-
-    <div class="container">
-        <div class="left-menu">
-            <div class="main-menu">
-                <ul>
-                    <li><a href="/applicationForm.php">Homepage</a></li>
-                </ul>
-            </div>
-        </div>
-
+    <div class="container" style="padding-left: 0px; margin-left: unset">
         <div class="content">
             <h1>Homepage</h1>
 
@@ -138,7 +117,7 @@ if(isset($_POST['submit'])){
                 <?php } ?>
 
                 <br />
-                <label for="price">Price</label><br />
+                <label for="price">Price(EURO)</label><br />
                 <input id="price" type="text" value="10000" name="price" / required>
                 <?php if (isset($_POST) && $errors[PRICE]) {?>
                     <div style="color: red"><?php echo $errors[PRICE] ?></div>
@@ -146,13 +125,23 @@ if(isset($_POST['submit'])){
 
                 <br />
                 <label for="capture_date">Capture Date</label><br />
-                <input id="capture_date" type="date" value="" name="captureDate" / required>
+                <input id="capture_date" type="date"value="2013-01-08" name="captureDate" / required>
                 <?php if (isset($_POST) && $errors['captureDate']) {?>
                     <div style="color: red"><?php echo $errors['captureDate'] ?></div>
                 <?php } ?>
 
-
                 <br/>
+                <label for="tag">Tag</label><br />
+                <select name='tag[]' multiple="" required>
+                    <option value="nature">Nature</option>
+                    <option value="animals">Animals</option>
+                    <option value="Cities">City</option>
+                    <option value="Cars">Cars</option>
+                </select>
+                <?php if (isset($_POST) && $errors[TAG]) {?>
+                    <div style="color: red"><?php echo $errors[TAG] ?></div>
+                <?php } ?>
+
                 <br/>
                 <br/>
 
@@ -169,11 +158,5 @@ if(isset($_POST['submit'])){
 
         <div style="clear: both;"></div>
     </div>
-
-    <div id="footer">
-        Footer
-    </div>
 </div>
 
-</body>
-</html>

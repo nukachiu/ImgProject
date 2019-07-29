@@ -1,0 +1,12 @@
+
+{
+  "name": "ImgProject",
+  "require": {
+    "php": "7.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MyApplication\\": "src/MyApp/"
+    }
+  }
+}

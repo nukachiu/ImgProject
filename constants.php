@@ -8,3 +8,4 @@ const PRICE = 'price';
 const CAPTURE_DATE = 'captureDate';
 const PATH_TO_JSON = '$pathToJSON';
 const PATH_TO_IMAGE = 'pathToImage';
+const TAG = 'tag';
