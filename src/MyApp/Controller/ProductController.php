@@ -1,17 +1,17 @@
 <?php
 
-namespace MyApplication\Controller;
+namespace MyApp\Controller;
 
-use MyApplication\Model\DomainObject\Product;
-use MyApplication\View\Render\ShowProductRender;
+use MyApp\Model\DomainObject\Product;
+use MyApp\View\Renders\ProductPageRender;
+use MyApp\View\Renders\ShowProductRender;
+use MyApp\View\Renders\UploadProductRender;
 
 class ProductController
 {
     public static function showProducts()
     {
-        echo 'asd';
-        include 'MyApplication/View/Templates/home-page.php';
-        /*$products = [
+        $products = [
             (new Product())->setTitle('Cand vreau sa fluier fluier'),
             (new Product())->setTitle('Cand vreau sa fluier fluier'),
             (new Product())->setTitle('Cand vreau sa fluier fluier'),
@@ -21,20 +21,18 @@ class ProductController
             (new Product())->setTitle('Cand vreau sa fluier fluier')
         ];
 
-        //var_dump($products);
         (new ShowProductRender())->render($products);
-        echo 'AJUNG AICI?';*/
 
     }
 
     public static function uploadProduct()
     {
-
+        (new UploadProductRender())->rend();
     }
 
     public static function buyProduct()
     {
-
+        (new ProductPageRender())->rend();
     }
 
     public static function uploadProductPost()

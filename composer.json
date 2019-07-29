@@ -6,7 +6,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MyApplication\\": "src/MyApp/"
+      "": "src/"
     }
   }
 }

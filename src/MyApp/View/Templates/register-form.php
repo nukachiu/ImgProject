@@ -1,11 +1,9 @@
-<?php
-?>
 <div id="wrapper">
     <div class="container" style="padding-left: 0px; margin-left: unset">
         <div class="content">
             <h1>Register</h1>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/registerPost" method="post" enctype="multipart/form-data">
                 <label for="userName">Name</label><br />
                 <input id="userName" type="text" value="Car cu boi" name="userName" / required>
 
@@ -18,7 +16,7 @@
                 <input id="email" type="email" value="nicugrigo@yahoo.com" name="email" required>
 
                 <br />
-                <input type="submit" value="Log In" name="submit"/>
+                <input type="submit" value="Register" name="submit"/>
             </form>
         </div>
     </div>

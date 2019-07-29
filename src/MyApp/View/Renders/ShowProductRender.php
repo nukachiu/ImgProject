@@ -1,12 +1,11 @@
 <?php
 
-namespace MyApplication\View\Render;
+namespace MyApp\View\Renders;
 
 class ShowProductRender
 {
     public function render(array $products)
     {
-        echo "AM REUSIT";
-        require 'MyApplication/View/Templates/home-page.php';
+        require 'src/MyApp/View/Templates/home-page.php';
     }
 }

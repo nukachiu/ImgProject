@@ -1,19 +1,27 @@
 <?php
 
 
-namespace MyApplication\Controller;
+namespace MyApp\Controller;
 
+use MyApp\View\Renders\LoginFormRender;
+use MyApp\View\Renders\ProfileRender;
+use MyApp\View\Renders\RegisterRender;
 
 class UserController
 {
     public static function login()
     {
-        require 'src/MyApp/View/Templates/login-form.php';
+        (new LoginFormRender())->render();
     }
 
     public static function register()
     {
-        require 'src/MyApp/View/Templates/register-form.php';
+        (new RegisterRender())->render();
+    }
+
+    public static function showProfile()
+    {
+        (new ProfileRender())->rend();
     }
 
     public static function logout()
@@ -25,14 +33,15 @@ class UserController
     {
 
     }
-
+    //aici voi face si redirect castre pagina corecta
     public static function loginPost()
     {
-
+        echo "SUNT IN LOGIN POST".'<br/>';
+        echo 'Aici vor fi validari si etc'.PHP_EOL;
     }
 
     public static function registerPost()
     {
-
+        echo 'SUNT IN REGISTER POST';
     }
 }

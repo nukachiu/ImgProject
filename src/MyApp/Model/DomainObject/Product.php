@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MyApplication\Model\DomainObject;
+namespace MyApp\Model\DomainObject;
 
 
 class Product
