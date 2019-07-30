@@ -4,12 +4,12 @@
             <h1>Register</h1>
 
             <form action="/registerPost" method="post" enctype="multipart/form-data">
-                <label for="userName">Name</label><br />
-                <input id="userName" type="text" value="Car cu boi" name="userName" / required>
+                <label for="name">Name</label><br />
+                <input id="name" type="text" value="Car cu boi" name="name" / required>
 
                 <br />
                 <label for="password">Password</label><br />
-                <input id="password" type="password" value="nicugrigo@yahoo.com" name="password" required>
+                <input id="password" type="password" value="parola" name="password" required>
 
                 <br />
                 <label for="email">Email</label><br />

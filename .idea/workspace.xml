@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a073ca6-ecb7-40ef-bd80-a78f4454451f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgProject/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/ImgProject/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Renders/ShowProductRender.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Renders/ShowProductRender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/login-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/login-form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/register-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/register-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +25,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,12 +63,13 @@
   </component>
   <component name="ProjectId" id="1OXgW4fSij2hqVeHizCGaWngiIh" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -74,15 +88,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.scratch_3.php">
     <configuration name="scratch_2.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_3.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.php">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.scratch_3.php" />
         <item itemvalue="PHP Script.scratch_2.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",Show Fields,Show Constants,Show Protected Members,Show Private Members" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -102,7 +123,9 @@
       <workItem from="1563951924949" duration="1532000" />
       <workItem from="1564129393502" duration="3587000" />
       <workItem from="1564149097763" duration="943000" />
-      <workItem from="1564382821844" duration="17695000" />
+      <workItem from="1564382821844" duration="19001000" />
+      <workItem from="1564466250755" duration="24001000" />
+      <workItem from="1564500352772" duration="477000" />
     </task>
     <servers />
   </component>
@@ -121,5 +144,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/ProductMapper.php</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -6,21 +6,19 @@ use MyApp\Model\DomainObject\Product;
 use MyApp\View\Renders\ProductPageRender;
 use MyApp\View\Renders\ShowProductRender;
 use MyApp\View\Renders\UploadProductRender;
+use MyApp\Model\Persistence\PersistenceFactory;
+use MyApp\Model\Persistence\Finder\ProductFinder;
+
 
 class ProductController
 {
     public static function showProducts()
     {
-        $products = [
-            (new Product())->setTitle('Cand vreau sa fluier fluier'),
-            (new Product())->setTitle('Cand vreau sa fluier fluier'),
-            (new Product())->setTitle('Cand vreau sa fluier fluier'),
-            (new Product())->setTitle('Cand vreau sa fluier fluier'),
-            (new Product())->setTitle('Cand vreau sa fluier fluier'),
-            (new Product())->setTitle('Cand vreau sa fluier fluier'),
-            (new Product())->setTitle('Cand vreau sa fluier fluier')
-        ];
-
+        /**
+         * @var ProductFinder $productFinder
+         */
+        $productFinder = PersistenceFactory::createFinder('product');
+        $products = $productFinder->findAll();
         (new ShowProductRender())->render($products);
 
     }

@@ -10,6 +10,21 @@ class User
     private $password;
 
     /**
+     * User constructor.
+     * @param $name
+     * @param $email
+     * @param $password
+     * @param $id
+     */
+    public function __construct($name, $email, $password, $id=null)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->email = $email;
+        $this->password = $password;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()

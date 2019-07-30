@@ -7,7 +7,15 @@
             <br />
             <a href = "/register">Register</a>
             <br />
-            <?php echo 'HomePAge'?>
+            <?php
+            foreach($products as $item){
+                ?>
+                <h2><?=$item->getTitle()?></h2>
+                <h4><?=$item->getDescription()?></h4>
+                <br/>
+                <?php
+            }
+            ?>
 
         </div>
     </div>

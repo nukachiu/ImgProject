@@ -1,5 +1,6 @@
 {
     "require": {
-        "sybio/image-workshop": "^2.1"
+        "sybio/image-workshop": "^2.1",
+      "ext-pdo": "*"
     }
 }

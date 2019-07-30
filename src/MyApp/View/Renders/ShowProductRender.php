@@ -4,7 +4,7 @@ namespace MyApp\View\Renders;
 
 class ShowProductRender
 {
-    public function render(array $products)
+    public function render($products)
     {
         require 'src/MyApp/View/Templates/home-page.php';
     }

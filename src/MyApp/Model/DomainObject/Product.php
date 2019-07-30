@@ -10,10 +10,30 @@ class Product
     private $userId;
     private $title;
     private $description;
-    private $tags;
     private $cameraSpecs;
     private $captureDate;
     private $thumbnailPath;
+
+    /**
+     * Product constructor.
+     * @param $id
+     * @param $userId
+     * @param $title
+     * @param $description
+     * @param $cameraSpecs
+     * @param $captureDate
+     * @param $thumbnailPath
+     */
+    public function __construct($userId, $title, $description, $cameraSpecs, $captureDate, $thumbnailPath,$id=null)
+    {
+        $this->id = $id;
+        $this->userId = $userId;
+        $this->title = $title;
+        $this->description = $description;
+        $this->cameraSpecs = $cameraSpecs;
+        $this->captureDate = $captureDate;
+        $this->thumbnailPath = $thumbnailPath;
+    }
 
     private function getTiers(){
 
@@ -62,6 +82,7 @@ class Product
 
     /**
      * @param mixed $title
+     * @return string
      */
     public function setTitle($title)
     {
@@ -84,22 +105,6 @@ class Product
     public function setDescription($description): void
     {
         $this->description = $description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    /**
-     * @param mixed $tags
-     */
-    public function setTags($tags): void
-    {
-        $this->tags = $tags;
     }
 
     /**
@@ -149,6 +154,4 @@ class Product
     {
         $this->thumbnailPath = $thumbnailPath;
     }
-
-
 }
