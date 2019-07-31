@@ -14,7 +14,11 @@ use MyApp\Model\DomainObject\User;
 use MyApp\Model\DomainObject\Product;
 use MyApp\Model\Persistence\Finder\ProductFinder;
 
-const URL_MAP=[
+$router = new \MyApp\Controller\Router();
+include 'src/MyApp/View/Templates/menu.php';
+$router->match($_SERVER['REQUEST_URI']);
+
+/*const URL_MAP=[
     '/' => "MyApp\Controller\ProductController::showProducts",
     '/login'=>"MyApp\Controller\UserController::login",
     '/logout'=>"MyApp\Controller\UserController::logout",
@@ -24,11 +28,11 @@ const URL_MAP=[
     '/profile'=>"MyApp\Controller\UserController::showProfile",
     '/upload'=>"MyApp\Controller\ProductController::uploadProduct",
     '/uploadPost'=>"MyApp\Controller\ProductController::uploadProductPost",
-    '/product'=>"MyApp\Controller\ProductController::showProducts",
+    '/product'=>"MyApp\Controller\ProductController::buyProduct",
 ];
 
 $url = $_SERVER['REQUEST_URI'];
 
 include 'src/MyApp/View/Templates/menu.php';
 
-call_user_func(URL_MAP[$url]);
+call_user_func(URL_MAP[$url]);*/

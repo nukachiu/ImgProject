@@ -33,20 +33,19 @@ class ProductController
 
     public static function buyProduct()
     {
-        (new ProductPageRender())->rend();
+        //Get the product id
+        $id = (explode('/',$_SERVER['REQUEST_URI']))[2];
+
+
+        $finderProduct = PersistenceFactory::createFinder('product');
+        /**
+         * @val ProductFinder $finderProduct
+         */
+        (new ProductPageRender())->rend($finderProduct->findById($id));
     }
 
     public static function uploadProductPost()
     {
-        echo 'AICI MA DUCE FORMULARUL';
-
-//        if(!file_exists('/uploads/'.$artistFolder)) {
-//            mkdir('uploads/' . $artistFolder);
-//        }
-//        if(move_uploaded_file($_FILES['image1']['tmp_name'],$path.'/'.$_FILES['image1']['name']) === false){
-//            $errors[IMAGE] = 'There was a problem while uploading the photo';
-//        }
-
         $product = ProductTransform::arrayToProduct($_POST,$_FILES);
         var_dump($_FILES);
         var_dump($product);
@@ -54,15 +53,13 @@ class ProductController
         if(!file_exists($product->getThumbnailPath())){
             mkdir($product->getThumbnailPath());
         }
-        move_uploaded_file($product->getTitle(),$product->getThumbnailPath().'/'.$product->getTitle());
+        move_uploaded_file($_FILES['image1']['tmp_name'],$product->getThumbnailPath().'/'.$product->getTitle());
 
-
-        //Pt baza de date
-        //$uploadImage = PersistenceFactory::createMapper('product');
-        //        /**
-        //         * @var ProductMapper $uploadImage
-        //         */
-        //$uploadImage->save($product);
+        $uploadImage = PersistenceFactory::createMapper('product');
+        /**
+         * @var ProductMapper $uploadImage
+         */
+        $uploadImage->save($product);
     }
 
     public static function showProduct()

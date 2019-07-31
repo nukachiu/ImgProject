@@ -19,7 +19,7 @@ class ProductFinder extends AbstractFinder
         $row = $statement->fetch(PDO::FETCH_ASSOC);
 
         //TODO: we are assuming here the property names and column names are the same (adjust if not in your case)
-        return $this->translateToUser($row);
+        return $this->translateToProduct($row);
     }
 
     public function findAll() : array

@@ -5,9 +5,15 @@
             <?php
             foreach($products as $item){
                 ?>
-                <h2><?=$item->getTitle()?></h2>
-                <h4><?=$item->getDescription()?></h4>
-                <br/>
+                <div style="border-style: groove">
+                    <h2><?=$item->getTitle()?></h2>
+                    <h4><?=$item->getDescription()?></h4>
+                    <img src=
+                        '<?php echo $item->getThumbnailPath().'/'.$item->getTitle()?>'>
+                    <br/>
+
+                    <a href="product\<?=$item->getId()?>"><input type="button" value="Vizualizeaza produs"></a>
+                </div>
                 <?php
             }
             ?>

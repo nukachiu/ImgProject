@@ -3,20 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8a073ca6-ecb7-40ef-bd80-a78f4454451f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applicationForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/applicationForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/FormMappers/UserTransform.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/FormMappers/UserTransform.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/ProductFinder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/ProductFinder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/UserFinder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/UserFinder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/ProductMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/ProductMapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Renders/LoginFormRender.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Renders/LoginFormRender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Renders/ProductPageRender.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Renders/ProductPageRender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/login-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/login-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/upload-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/upload-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/product-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/product-page.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/MyApp/View/Renders" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -133,7 +126,7 @@
       <workItem from="1564382821844" duration="19001000" />
       <workItem from="1564466250755" duration="24001000" />
       <workItem from="1564500352772" duration="678000" />
-      <workItem from="1564555390277" duration="14816000" />
+      <workItem from="1564555390277" duration="23815000" />
     </task>
     <servers />
   </component>
