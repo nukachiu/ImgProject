@@ -3,7 +3,7 @@
         <div class="content">
             <h1>Upload</h1>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/uploadPost" method="post" enctype="multipart/form-data">
                 <label for="image_title">Image Title</label><br />
                 <input id="image_title" type="text" value="Car cu boi" name="imageTitle" / required>
                 <br />
@@ -18,6 +18,10 @@
 
                 <label for="capture_date">Capture Date</label><br />
                 <input id="capture_date" type="date"value="2013-01-08" name="captureDate" / required>
+                <br />
+
+                <label for="description">Description</label><br />
+                <textarea id="description" rows="4" cols="50" name="description" placeholder="O descriere Frumoasa">O descriere Frumoasa</textarea>
                 <br />
 
                 <label for="tag">Tag</label><br />

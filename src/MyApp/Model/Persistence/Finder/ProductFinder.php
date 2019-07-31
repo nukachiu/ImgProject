@@ -30,7 +30,6 @@ class ProductFinder extends AbstractFinder
         $statement->execute();
         $result = array();
         while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-            //var_dump($row);
             $result[] = $this->translateToProduct($row);
         }
 

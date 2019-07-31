@@ -99,5 +99,10 @@ class User
         $this->password = $password;
     }
 
-
+    public function isNull():bool
+    {
+        if(null === $this->getEmail() && null === $this->getName())
+            return true;
+        return false;
+    }
 }

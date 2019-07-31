@@ -1,9 +1,9 @@
 <?php
 
-
 namespace MyApp\Controller;
 
 use MyApp\Model\DomainObject\User;
+use MyApp\Model\Persistence\Finder\UserFinder;
 use MyApp\View\Renders\LoginFormRender;
 use MyApp\View\Renders\ProfileRender;
 use MyApp\View\Renders\RegisterRender;
@@ -30,33 +30,61 @@ class UserController
 
     public static function logout()
     {
+//        echo "LOG OUT TATA";
+        unset($_SESSION['name']);
+        unset($_SESSION['email']);
 
+        header('Location: /');
     }
 
     public static function showUploads()
     {
 
     }
-    //aici voi face si redirect castre pagina corecta
+
     public static function loginPost()
     {
-        echo "SUNT IN LOGIN POST".'<br/>';
-        echo 'Aici vor fi validari si etc'.PHP_EOL;
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        /**
+         * @var UserFinder $userLogin
+         */
+        $userLogin = PersistenceFactory::createFinder('user');
+        /**
+         * @var User $user
+         */
+        $user = $userLogin->findForLogin($email,$password);
+        if($user->isNull()) {
+            (new LoginFormRender())->render('Eraore');
+            return;
+        }
+
+        $_SESSION['name'] = $user->getName();
+        $_SESSION['email'] = $user->getEmail();
+        $_SESSION['id'] = $user->getId();
 
         header('Location: /');
+    }
+
+    public static function isLoggedIn()
+    {
+        if(isset($_SESSION['name'])){
+            return true;
+        }
+        return false;
     }
 
     public static function registerPost()
     {
         echo 'SUNT IN REGISTER POST';
         /**
-         * @var UserMapper $a
+         * @var UserMapper $userRegister
          */
-        $a = PersistenceFactory::createMapper('user');
+        $userRegister = PersistenceFactory::createMapper('user');
         $user = UserTransform::arrayToUser($_POST);
-        $a->save($user);
+        $userRegister->save($user);
 
         header('Location: /profile');
-
     }
 }

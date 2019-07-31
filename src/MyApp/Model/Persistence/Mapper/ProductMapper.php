@@ -32,9 +32,7 @@ class ProductMapper extends AbstractMapper
         $statement->bindValue(5,$row['thumbnailPath'],PDO::PARAM_STR);
         $statement->bindValue(6,$row['userId'],PDO::PARAM_INT);
 
-        var_dump($statement->execute());
-        var_dump($statement->errorInfo());
-
+        $statement->execute();
     }
 
     private function update(Product $product)

@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
     $path = sprintf("%s/%s",'uploads',$artistFolder);
 
     if(count($_FILES) && !isset($errors)){
-        if(!file_exists('/uploads/'.$artistName)) {
+        if(!file_exists('/uploads/'.$artistFolder)) {
             mkdir('uploads/' . $artistFolder);
         }
         if(move_uploaded_file($_FILES['image1']['tmp_name'],$path.'/'.$_FILES['image1']['name']) === false){
