@@ -2,7 +2,8 @@
 
 namespace MyApp\Controller;
 
-use MyApp\Model\DomainObject\Product;
+use MyApp\Model\DomainObject\Tier;
+use MyApp\Model\Persistence\Finder\TierFinder;
 use MyApp\Model\Persistence\Mapper\ProductMapper;
 use MyApp\View\Renders\ProductPageRender;
 use MyApp\View\Renders\ShowProductRender;
@@ -10,8 +11,8 @@ use MyApp\View\Renders\UploadProductRender;
 use MyApp\Model\Persistence\PersistenceFactory;
 use MyApp\Model\Persistence\Finder\ProductFinder;
 use MyApp\Model\FormMappers\ProductTransform;
-
-//session_start();
+use MyApp\Model\Persistence\Mapper\TierMapper;
+use MyApp\Model\Persistence\Mapper\OrderItemMapper;
 
 class ProductController
 {
@@ -34,36 +35,59 @@ class ProductController
     public static function buyProduct()
     {
         //Get the product id
+        $orderItemMapper = PersistenceFactory::createMapper('OrderItem');
         $id = (explode('/',$_SERVER['REQUEST_URI']))[2];
-
-
-        $finderProduct = PersistenceFactory::createFinder('product');
+        //echo $id;
         /**
-         * @val ProductFinder $finderProduct
+         * @var OrderItemMapper $orderItemMapper
          */
-        (new ProductPageRender())->rend($finderProduct->findById($id));
+        $orderItemMapper->insert($id,$_SESSION['id']);
+
+        header('Location: /');
+
     }
 
     public static function uploadProductPost()
     {
         $product = ProductTransform::arrayToProduct($_POST,$_FILES);
-        var_dump($_FILES);
-        var_dump($product);
 
+        $imagePath = $product->getThumbnailPath().'/'.$product->getTitle();
         if(!file_exists($product->getThumbnailPath())){
             mkdir($product->getThumbnailPath());
         }
-        move_uploaded_file($_FILES['image1']['tmp_name'],$product->getThumbnailPath().'/'.$product->getTitle());
+        move_uploaded_file($_FILES['image1']['tmp_name'],$imagePath);
 
         $uploadImage = PersistenceFactory::createMapper('product');
         /**
          * @var ProductMapper $uploadImage
          */
-        $uploadImage->save($product);
+        $lastId =  $uploadImage->save($product);
+
+        $tier = new Tier($lastId,'large',$imagePath,$imagePath, $_POST['price']);
+
+        $uploadTier = PersistenceFactory::createMapper('tier');
+        /**
+         * @var TierMapper $uploadTier
+         */
+
+        $uploadTier->insert($tier);
+
+        header('Location: /');
     }
 
     public static function showProduct()
     {
+        //Get the product id
+        $id = (explode('/',$_SERVER['REQUEST_URI']))[2];
 
+        /**
+         * @var ProductFinder $finderProduct
+         * @var TierFinder $finderTier
+         */
+
+        $finderProduct = PersistenceFactory::createFinder('product');
+        $finderTier = PersistenceFactory::createFinder('tier');
+
+        (new ProductPageRender())->rend($finderProduct->findById($id),$finderTier->findByProductId($id));
     }
 }

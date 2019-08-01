@@ -36,7 +36,7 @@
                 <input type="file" name="image1" />
                 <br />
                 <br />
-                <input type="submit" value="Salveaza profil" name="submit"/>
+                <input type="submit" value="Posteaza Imaginea" name="submit"/>
             </form>
         </div>
     </div>

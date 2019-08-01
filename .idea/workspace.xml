@@ -5,10 +5,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/ProductFinder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/ProductFinder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/Tier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/DomainObject/Tier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/ProductMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/ProductMapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/UserMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Mapper/UserMapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/PersistenceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/PersistenceFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Renders/ProductPageRender.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Renders/ProductPageRender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/product-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/product-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/upload-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/upload-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/534b44a19bf18d20b71ecc4eb77c572f/Birouri" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/534b44a19bf18d20b71ecc4eb77c572f/Car cu boi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/534b44a19bf18d20b71ecc4eb77c572f/Floricele" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/534b44a19bf18d20b71ecc4eb77c572f/Peisaj cu natura" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +136,8 @@
       <workItem from="1564382821844" duration="19001000" />
       <workItem from="1564466250755" duration="24001000" />
       <workItem from="1564500352772" duration="678000" />
-      <workItem from="1564555390277" duration="23815000" />
+      <workItem from="1564555390277" duration="24047000" />
+      <workItem from="1564643291853" duration="18678000" />
     </task>
     <servers />
   </component>

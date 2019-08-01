@@ -9,13 +9,12 @@ use PDO;
 
 class ProductMapper extends AbstractMapper
 {
-    public function save(Product $product): void
+    public function save(Product $product)
     {
         if (null === $product->getId()) {
-            $this->insert($product);
-            return;
+            return $this->insert($product);
         }
-        $this->update($product);
+        return $this->update($product);
     }
 
     private function insert(Product $product)
@@ -33,6 +32,8 @@ class ProductMapper extends AbstractMapper
         $statement->bindValue(6,$row['userId'],PDO::PARAM_INT);
 
         $statement->execute();
+
+        return $this->getPdo()->lastInsertId();
     }
 
     private function update(Product $product)
@@ -44,6 +45,8 @@ class ProductMapper extends AbstractMapper
         $statement = $this->getPdo()->prepare($sql);
         // ... bind parameters from $row
         $statement->execute();
+
+        return $product->getId();
     }
 
     private function translateToArray(Product $product): array

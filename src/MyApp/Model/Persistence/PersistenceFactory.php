@@ -74,14 +74,14 @@ class PersistenceFactory
     private static function getMapperClassName(string $entityClass): string
     {
         // TODO: transform by convention an entity class name to its mapper class name
-        return 'MyApp\\Model\\Persistence\\Mapper\\'.mb_convert_case($entityClass, MB_CASE_TITLE)."Mapper";
+        return 'MyApp\\Model\\Persistence\\Mapper\\'.ucfirst($entityClass)."Mapper";
     }
 
     private static function getFinderClassName(string $entityClass): string
     {
         // TODO: transform by convention an entity class name to its mapper class name
         //return UserFinder::class;
-        return 'MyApp\\Model\\Persistence\\Finder\\'.mb_convert_case($entityClass, MB_CASE_TITLE)."Finder";
+        return 'MyApp\\Model\\Persistence\\Finder\\'.ucfirst($entityClass)."Finder";
     }
 
 }

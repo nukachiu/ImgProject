@@ -17,7 +17,8 @@ class Router
         'profile'=>"MyApp\Controller\UserController::showProfile",
         'upload'=>"MyApp\Controller\ProductController::uploadProduct",
         'uploadPost'=>"MyApp\Controller\ProductController::uploadProductPost",
-        'product'=>"MyApp\Controller\ProductController::buyProduct",
+        'product'=>"MyApp\Controller\ProductController::showProduct",
+        'buyProduct'=>"MyApp\Controller\ProductController::buyProduct",
     ];
 
     public function match(string $url)

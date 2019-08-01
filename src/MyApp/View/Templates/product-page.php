@@ -1,8 +1,3 @@
-<?php
-
-var_dump($product);
-?>
-
 <div id="wrapper">
     <div class="container" style="padding-left: 0px; margin-left: unset">
         <div class="content">
@@ -10,14 +5,13 @@ var_dump($product);
                 <div style="border-style: groove">
                     <h2><?=$product->getTitle()?></h2>
                     <h4><?=$product->getDescription()?></h4>
+                    <h4>Pret <?=$tier->getPrice()?> EURO</h4>
                     <img src=
-                         '/<?php echo $product->getThumbnailPath().'/'.$product->getTitle()?>'>
+                         '/<?php echo $tier->getPathWithWatermark()?>'>
                     <br/>
 
-                    <input type="button" value="Cumpara produs">
+                    <a href="../buyProduct/<?=$tier->getId()?>"><input type="button" value="Cumparare produs"></a>
                 </div>
         </div>
     </div>
 </div>
-<?php echo $product->getThumbnailPath().'/'.$product->getTitle().'<br/>'?>
-<?=$product->getId()?>

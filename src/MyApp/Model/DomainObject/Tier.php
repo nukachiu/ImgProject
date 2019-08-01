@@ -7,13 +7,77 @@ namespace MyApp\Model\DomainObject;
 class Tier
 {
     private $id;
-    private $product;
+    private $productId;
     private $size;
+    private $price;
     private $pathWithWatermark;
+    private $pathWithoutWatermark;
 
-    private function getOrders(){
+    /**
+     * Tier constructor.
+     * @param $id
+     * @param $productId
+     * @param $size
+     * @param $pathWithWatermark
+     * @param $pathWithoutWatermark
+     * @param $price
+     */
+    public function __construct($productId, $size, $pathWithWatermark, $pathWithoutWatermark, $price, $id=null)
+    {
+        $this->id = $id;
+        $this->productId = $productId;
+        $this->size = $size;
+        $this->pathWithWatermark = $pathWithWatermark;
+        $this->pathWithoutWatermark = $pathWithoutWatermark;
+        $this->price = $price;
+    }
 
-        return 1;
+    /**
+     * @return mixed
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }
+
+    /**
+     * @param mixed $productId
+     */
+    public function setProductId($productId): void
+    {
+        $this->productId = $productId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price): void
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPathWithoutWatermark()
+    {
+        return $this->pathWithoutWatermark;
+    }
+
+    /**
+     * @param mixed $pathWithoutWatermark
+     */
+    public function setPathWithoutWatermark($pathWithoutWatermark): void
+    {
+        $this->pathWithoutWatermark = $pathWithoutWatermark;
     }
 
     /**
@@ -30,22 +94,6 @@ class Tier
     public function setId($id): void
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
-     * @param mixed $product
-     */
-    public function setProduct($product): void
-    {
-        $this->product = $product;
     }
 
     /**

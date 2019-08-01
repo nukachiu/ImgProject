@@ -30,7 +30,6 @@ class UserController
 
     public static function logout()
     {
-//        echo "LOG OUT TATA";
         unset($_SESSION['name']);
         unset($_SESSION['email']);
 
@@ -45,7 +44,7 @@ class UserController
     public static function loginPost()
     {
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = sha1($_POST['password']);
 
         /**
          * @var UserFinder $userLogin
@@ -77,7 +76,6 @@ class UserController
 
     public static function registerPost()
     {
-        echo 'SUNT IN REGISTER POST';
         /**
          * @var UserMapper $userRegister
          */

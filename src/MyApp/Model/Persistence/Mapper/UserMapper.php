@@ -58,7 +58,8 @@ class UserMapper extends AbstractMapper
         // write password only when is set/user is a new entity (on load it is never read into the property)
         if ($user->getPassword() !== null) {
             //$row['password'] = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-            $row['password'] = $user->getPassword();
+            //$row['password'] = $user->getPassword();
+            $row['password'] = sha1($user->getPassword());
         }
 
         return $row;
