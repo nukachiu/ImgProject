@@ -14,9 +14,9 @@ include 'Validation/validations.php';
 include 'Error/error.php';
 include 'constants.php';
 
-$comandLine = 'my_command_line_tool.php --input-file=/home/alexandrumaeran/Desktop/imag.jpg --output-file=/home/alexandrumaeran/Desktop/nsou.jpg --height=1000 --format=3:2 --watermark=/home/alexandrumaeran/Desktop/water.jpg';
+//$comandLine = 'my_command_line_tool.php --input-file=/home/alexandrumaeran/Desktop/imag.jpg --output-file=/home/alexandrumaeran/Desktop/nasou.jpg --height=1000 --format=3:2 --watermark=/home/alexandrumaeran/Desktop/water.jpg';
 
-$payLoad1 = CLI($comandLine);
+$payLoad1 = CLI($argv);
 if(isHelp($payLoad1)) {
     showHelp();
     die();

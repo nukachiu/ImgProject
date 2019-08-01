@@ -18,6 +18,6 @@ class ProductTransform
         $artistFolder = self::hashArtistName($artistName);
         $path = sprintf("%s/%s",IMAGE_ROOT_FOLDER, $artistFolder);
 
-        return new Product($_SESSION['id'],$rowPOST['imageTitle'],$rowPOST['description'],$rowPOST['cameraSpecs'],$rowPOST['captureDate'],$path);
+        return new Product($_SESSION['id'],$rowFILE['image1']['name'],$rowPOST['description'],$rowPOST['cameraSpecs'],$rowPOST['captureDate'],$path);
     }
 }
