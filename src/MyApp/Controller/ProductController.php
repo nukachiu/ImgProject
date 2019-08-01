@@ -72,7 +72,6 @@ class ProductController
         $product = ProductTransform::arrayToProduct($_POST,$_FILES);
 
         var_dump($product);
-        die;
 
         //$imagePath = $product->getThumbnailPath().'/'.$product->getTitle();
         $imagePath = $product->getThumbnailPath().'/'.$_FILES['image1']['name'];

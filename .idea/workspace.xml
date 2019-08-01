@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8a073ca6-ecb7-40ef-bd80-a78f4454451f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgProject/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/ImgProject/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/FormMappers/ProductTransform.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/FormMappers/ProductTransform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/TierFinder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/Model/Persistence/Finder/TierFinder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/home-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApp/View/Templates/product-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApp/View/Templates/product-page.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +124,7 @@
       <workItem from="1564466250755" duration="24001000" />
       <workItem from="1564500352772" duration="678000" />
       <workItem from="1564555390277" duration="24047000" />
-      <workItem from="1564643291853" duration="23041000" />
+      <workItem from="1564643291853" duration="23737000" />
     </task>
     <servers />
   </component>
